@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travaux Pratiques numéro 6</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" target="_blank" href="https://aloukal.alwaysdata.net/">  <img class="logo" src="data:image/png;base64,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" alt="Logo adel ">  </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Qui sommes-nous ?</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Nos services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">INK PARTY ONE</a></li>
+                                <li><a class="dropdown-item" href="#">WAKEUP</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Nos évènements</a>
+                        </li>
+                        <li class="nav-item">
+                            <section class="nav-rs">
+                                <section class="row">
+                                    <article class="col">
+                                        <a href="" class="icon-facebook2"></a>
+                                    </article>
+                                    <article class="col">
+                                        <a href="" class="icon-twitter"></a>
+                                    </article>
+                                </section>
+                            </section>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="py-5 text-center container-fluid bg-light position-relative bg-image ">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light text-white">Album example</h1>
+                <p class="lead text-white">Something short and leading about the collection below—its contents, the
+                    creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
+                    entirely.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="mb-5 mt-4">
+            <p class="fs-2">Qui sommes-nous ?</p>
+            <section class="row align-items-start">
+                <article class="col-md-4">
+                    Praesent faucibus mollis dapibus. Donec ac purus sit amet nunc vulputate suscipit. Quisque finibus
+                    libero id velit maximus malesuada. Nam sodales risus sit amet fringilla dictum. Nam accumsan turpis
+                    in
+                    turpis viverra, vitae dapibus orci consectetur. Etiam iaculis fermentum molestie. Praesent ut erat
+                    pulvinar, bibendum ex gravida, fermentum velit.
+                </article>
+                <article class="col-md-4">
+                    Praesent ut erat pulvinar, bibendum ex gravida, fermentum velit. Aliquam cursus mi posuere volutpat
+                    congue. Nam ut tellus at ligula aliquam elementum sit amet id sem. Phasellus ligula massa, auctor
+                    euismod turpis lacinia, sagittis feugiat est. Praesent eget purus id augue volutpat condimentum sit
+                    amet kjhdqkjdhqkln
+                    eget nulla. In quis laoreet arcu, et laoreet est. Aenean sollicitudin libero eu metus convallis, in
+                    fermentum justo aliquam.
+                </article>
+                <article class="col-md-4">
+                    Cras elementum at quam sed finibus. Nullam semper sed magna et lobortis. Fusce nec ipsum pretium,
+                    accumsan eros quis, ornare ex. Sed at erat rhoncus, maximus lacus sed, rutrum lorem. Sed tortor
+                    magna,
+                    elementum a leo sed, porta dapibus tortor. Integer quis est placerat, dignissim ipsum eget,
+                    convallis
+                    neque. 
+
+                    la partie ici est super groose
+                </article>
+            </section>
+        </section>
+
+        <section>
+           <u>  <p class="fs-1">Nos services</p>  </u> 
+            <section class="row align-items-start">
+                <article class="col-md-3">
+                    <article class="card border-0">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYQ5o4JsJyus8wMo-ulRiM00k0rHchCCsjZ1me8xnZLxsNBlFLevcMNJJBBNIF6hBK8L4&usqp=CAU" class="card-img-top" alt="...">
+                        <div class="card-body p-0">
+                            <h5 class="card-title">Un peu de musique ?</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of   elementum a leo sed, porta dapibus tortor. Integer quis est placerat, dignissim ipsum eget,
+                                convallis
+                                neque.
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary float-end">Lire la suite</a>
+                        </div>
+                    </article>
+                </article>
+                <article class="col-md-3">
+                    <article class="card border-0">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3gWB7WG2snf-WsQJIs9BuxXmKTF9RvOuncw&usqp=CAU" class="card-img-top" alt="...">
+                        <div class="card-body p-0">
+                            <h5 class="card-title"> Les confettis</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of  elementum a leo sed, porta dapibus tortor. Integer quis est placerat, dignissim ipsum eget,
+                                convallis
+                                neque.
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary float-end">Lire la suite</a>
+                        </div>
+                    </article>
+                </article>
+                <article class="col-md-3">
+                    <article class="card border-0">
+                        <img src="https://weezevent.com/wp-content/uploads/2019/01/12145054/organiser-soiree-1000x585.jpg" class="card-img-top" alt="...">
+                        <div class="card-body p-0">  
+                            
+                            <h5 class="card-title"> Party party</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of  elementum a leo sed, porta dapibus tortor. Integer quis est placerat, dignissim ipsum eget,
+                                convallis
+                                neque.
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary float-end">Lire la suite</a>
+                        </div>
+                    </article>
+                </article>
+                <article class="col-md-3">
+                    <article class="card border-0">
+                        <img src="https://offloadmedia.feverup.com/parissecret.com/wp-content/uploads/2019/05/23144652/THE-KEY-PHOTO-DE-PRESSE-10-1024x684.jpg" class="card-img-top" alt="...">
+                        <div class="card-body p-0">
+                            <h5 class="card-title"> La belle bleu</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of  elementum a leo sed, porta dapibus tortor. Integer quis est placerat, dignissim ipsum eget,
+                                convallis
+                                neque.
+                                the card's content.</p>
+                            <a href="" class="btn btn-primary float-end">Lire la suite</a>
+                        </div>
+                    </article>
+                </article>
+            </section>
+        </section>
+<br> <br>
+        <section>
+           <u>  <p class="fs-1"> Nos événements </p>  </u>
+            <section class="row ">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="https://decouvrirlemonde.fr/wp-content/uploads/2019/01/festival-tomorrowland-e1546504483379.png" alt="">
+                    </div> 
+        
+                    <div class="col-md-6">
+                        <h2 class="my-3 fs-3">Sur le plan académique</h2>
+                        <p>On retrouve donc Harvard, en première position, avec un score de 94,5/100, suivie de CalTech
+                            (California Institute of Technology), qui a obtenu la note de 93,6. Enfin, le top 3 est clôturé par
+                            Stanford dont le score est de 92,3. La Chine se place à la 4e position, avec Peking University
+                            (91,4). L'université d'Oxford est donc au fond du top-5 mondial. </p>
+                            <div class="txt-fin1">
+                                <p >La France, quant à elle, n’apparaît qu’à la 31e position du palmarès de THE, sur le critère de la
+                                                        qualité des enseignements. C’est avec PSL – un groupement d’écoles qui réunit l’Université
+                                                        Paris-Dauphine, l’ENSAD ou MINES ParisTech – qu’elle se distingue. qualité des enseignements. C’est avec PSL – un groupement d’écoles qui réunit l’Université
+                                                        Paris-Dauphine, l’ENSAD ou MINES ParisTech – qu’elle se distingue.</p> 
+                                                        <a href="" class="btn btn-primary2 float-end">Lire la suite</a>   
+                                
+                                </div> <br><br>
+                                  
+            </section>
+            <br>
+           
+            <section class="row "> 
+                <div class="col-md-6">
+                    <h2 class="my-3 fs-3">Sur les artistes </h2>
+                    <p>On retrouve donc Harvard, en première position, avec un score de 94,5/100, suivie de CalTech
+                        (California Institute of Technology), qui a obtenu la note de 93,6. Enfin, le top 3 est clôturé par
+                        Stanford dont le score est de 92,3. La Chine se place à la 4e position, avec Peking University
+                        (91,4). L'université d'Oxford est donc au fond du top-5 mondial. </p>
+<div class="txt-fin">
+<p >La France, quant à elle, n’apparaît qu’à la 31e position du palmarès de THE, sur le critère de la
+                        qualité des enseignements. C’est avec PSL – un groupement d’écoles qui réunit l’Université
+                        Paris-Dauphine, l’ENSAD ou MINES ParisTech – qu’elle se distingue. qualité des enseignements. C’est avec PSL – un groupement d’écoles qui réunit l’Université
+                        Paris-Dauphine, l’ENSAD ou MINES ParisTech – qu’elle se distingue.</p> 
+                        <a href="" class="btn btn-primary2 float-start">Lire la suite</a>  
+
+</div> <br><br>
+                     
+                </div>
+                <div class="col-md-6 ">
+                    <img class="img-fluid" src="https://www.dhnet.be/resizer/MhLW9MJtqS6yBIQi6VYSwBI3XNI=/768x512/filters:focal(465x240:475x230)/cloudfront-eu-central-1.images.arcpublishing.com/ipmgroup/GSLXMLVRZZDSPAZPHIUX5PKELQ.jpg" alt="">
+                </div>
+            </section>
+
+        </section>
+
+    </main> <br>  
+    <footer class="container mt-5">
+       
+        <p  class="text-center fs-4" >Site réalisé par Adel Loukal <a href="https://aloukal.alwaysdata.net/"> Mon site perso </a></p>
+    </footer>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
